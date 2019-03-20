@@ -1,0 +1,24 @@
+{
+  "name": "mini-app-checkout",
+  "version": "1.0.0",
+  "description": "A functional checkout mini-app with no product data",
+  "main": "index.js",
+  "scripts": {
+    "react-dev": "nodemon babel-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rotto32/mini-app-checkout.git"
+  },
+  "author": "Rachael Otto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rotto32/mini-app-checkout/issues"
+  },
+  "homepage": "https://github.com/rotto32/mini-app-checkout#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-react": "^7.0.0"
+  }
+}
