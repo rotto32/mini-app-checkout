@@ -70,13 +70,12 @@ class HomePage extends React.Component {
         })
     }
 
-    sendData(event) {
-
-        alert('!');
-        console.log(this.state);
-        
+    sendData(event) {        
         axios.post('/user', this.state)
         .then((res)=>{
+            //should get the uniq id for user and store in state
+            //wipe personal data from state
+            //move on to next page
             console.log(res);
         })
         .catch((err) => {
