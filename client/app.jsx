@@ -1,3 +1,4 @@
+
 class HomePage extends React.Component {
     constructor (props){
         super(props);
@@ -36,7 +37,7 @@ class HomePage extends React.Component {
                     <input type="text" value={this.state.name} onChange={(e) => { this.setUsername(e) }}></input><br/>
                     Password<br/>
                     <input type="text" value={this.state.password} onChange={(e) => { this.setPassword(e) }}></input><br/>
-                  <input type="submit" value="Submit"></input>
+                  <input type="submit" value="Submit" onSubmit={(e) => { this.sendData(e) }}></input>
                 </form>
               </div>
             );
@@ -66,6 +67,19 @@ class HomePage extends React.Component {
         this.setState({
             password: event.target.value
         })
+    }
+
+    sendData(event) {
+        event.preventDefault();
+        console.log(event.target.value);
+        
+        axios.post('/user', this.state)
+        .then((res)=>{
+            console.log(res);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
     }
 
 
