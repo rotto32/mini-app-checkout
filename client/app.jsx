@@ -12,6 +12,7 @@ class HomePage extends React.Component {
         this.showSignUpForm = this.showSignUpForm.bind(this);
         this.setEmail = this.setEmail.bind(this); 
         this.setUsername = this.setUsername.bind(this); 
+        this.sendData = this.sendData.bind(this); 
     }
 
     render() {
@@ -30,14 +31,14 @@ class HomePage extends React.Component {
             return (
               <div>
                 <h3>Sign Up</h3>
-                <form>
+                    <form onSubmit={(e) => { this.sendData(e) }}>
                     Email<br/>
                   <input type="text" value={this.state.email} onChange={(e) => { this.setEmail(e) }}></input><br/>
                     Username<br/>
                     <input type="text" value={this.state.name} onChange={(e) => { this.setUsername(e) }}></input><br/>
                     Password<br/>
                     <input type="text" value={this.state.password} onChange={(e) => { this.setPassword(e) }}></input><br/>
-                  <input type="submit" value="Submit" onSubmit={(e) => { this.sendData(e) }}></input>
+                  <input type="submit" value="Submit"></input>
                 </form>
               </div>
             );
@@ -70,8 +71,9 @@ class HomePage extends React.Component {
     }
 
     sendData(event) {
-        event.preventDefault();
-        console.log(event.target.value);
+
+        alert('!');
+        console.log(this.state);
         
         axios.post('/user', this.state)
         .then((res)=>{
@@ -80,6 +82,8 @@ class HomePage extends React.Component {
         .catch((err) => {
             console.log(err);
         });
+        event.preventDefault();
+
     }
 
 

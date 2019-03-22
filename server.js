@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.post('/user', (req, res) => {
     console.log(req.body);
     connection.query(
-        `INSERT INTO users (name, password, email) VALUES ('test3', 'test3', 'test3@test.com')`,
+        `INSERT INTO users (name, password, email) VALUES ('${req.body.name}', '${req.body.password}', '${req.body.email}')`,
         (err, data, fields)=>{
             if (err) {
                 return err;
